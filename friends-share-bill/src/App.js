@@ -3,13 +3,18 @@ import './App.css';
 import Addfriend from './components/Addfriend';
 import BillShare from './components/BillShare';
 import FriendsList from './components/FriendsList';
+import BillDetails from './components/BillDetails';
 
 function App() {
-  const[friends,setFriends]=useState([])
+  const[friends,setFriends]=useState([]);
+  const[clickedFriend,setClickedFriend]=useState('')
   const addfriend=(name)=>{
     setFriends((prev)=>{
       return [...prev,{id:Date.now(),name:name,billDetails:[]}]
     })
+  }
+  const onFriendClicked=(friend)=>{
+      setClickedFriend(friend)
   }
   const onBillDetails=(billDetails)=>{
     setFriends(friend=>calculateBill(friend,billDetails))
@@ -54,7 +59,8 @@ function App() {
     <div className="container">
       <Addfriend addfriend={addfriend} />
        <BillShare friends={friends} onBillDetails={onBillDetails} />
-       <FriendsList friends={friends} />
+       <FriendsList friends={friends} onFriendClicked={onFriendClicked} />
+       {clickedFriend && <BillDetails clickedFriend={clickedFriend} />}
     </div>
     <br/>
     {JSON.stringify(friends)}
