@@ -4,6 +4,7 @@ import Addfriend from './components/Addfriend';
 import BillShare from './components/BillShare';
 import FriendsList from './components/FriendsList';
 import BillDetails from './components/BillDetails';
+import NewFriendShareBill from './components/NewFriendShareBill';
 
 function App() {
   const[friends,setFriends]=useState([]);
@@ -64,6 +65,8 @@ function App() {
     </div>
     <br/>
     {JSON.stringify(friends)}
+    <br/>
+    <NewFriendShareBill/>
     </>
   );
 }
