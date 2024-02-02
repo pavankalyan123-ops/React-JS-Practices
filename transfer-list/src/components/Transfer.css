@@ -1,0 +1,18 @@
+.container{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.box{
+    height: 300px;
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 10px;
+    flex-direction: column;
+}
+.actions{
+    flex-direction: column;
+    padding: 20px;
+    gap:20px;
+}
