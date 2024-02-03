@@ -1,0 +1,23 @@
+.container{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .box{
+    height: 300px;
+    width: 150px;
+    border: 1px solid black;
+  }
+  .actions{
+    padding: 20px;
+    flex-direction: column;
+    gap:20px;
+  }
+  .select{
+    border: 1px solid red;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color:green;
+  }
