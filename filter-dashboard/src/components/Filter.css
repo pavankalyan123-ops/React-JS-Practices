@@ -1,0 +1,15 @@
+.select{
+    display: flex;
+    gap:10px;
+  }
+  .box{
+    display: flex;
+    flex-wrap: wrap;
+    
+  }
+  .boxx{
+    height:100px;
+    width: 100px;
+    background-color: aqua;
+    margin: 10px;
+  }  
