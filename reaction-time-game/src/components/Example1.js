@@ -39,6 +39,15 @@ const Example1 = () => {
         setFinishedGame(true)
        }
     }
+    const handleKeyDown=(e)=>{
+        e.preventDefault();
+       if(e.key==="Enter")
+       {
+        console.log("entering ")
+        handleClick();
+       }
+    }
+    
   return (
     <div>
        {(!startGame || finishedGame ) && <> <button onClick={handleStartGame}>Start Game</button></>}
@@ -48,7 +57,7 @@ const Example1 = () => {
         </>}
        <h1>Score: {score}</h1>
        {(startGame && !finishedGame) && <>
-         <div onClick={handleClick} style={{...divStyle,backgroundColor:color}}></div>
+         <button autoFocus onClick={handleClick} onKeyDown={handleKeyDown} style={{...divStyle,backgroundColor:color}}></button>
        </>}
        {finishedGame && <h3>{score<15?"..Game over!":"You win!"}</h3>}
     </div>
